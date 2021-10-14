@@ -36,16 +36,6 @@
     },
     "app-nest": {
       "tags": []
-    },
-    "test-angular": {
-      "tags": []
-    },
-    "test-angular-e2e": {
-      "tags": [],
-      "implicitDependencies": ["test-angular"]
-    },
-    "test-worker": {
-      "tags": []
     }
   }
 }
