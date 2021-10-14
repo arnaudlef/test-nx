@@ -64,8 +64,8 @@
               "browserTarget": "app-angular:build:production"
             },
             "development": {
-                "proxyConfig": "apps/app-angular/proxy.conf.json",
-                "browserTarget": "app-angular:build:development"
+              "proxyConfig": "apps/app-angular/proxy.conf.json",
+              "browserTarget": "app-angular:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -117,6 +117,28 @@
           "outputs": ["{options.outputFile}"],
           "options": {
             "lintFilePatterns": ["apps/app-angular-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "app-library": {
+      "root": "libs/app-library",
+      "sourceRoot": "libs/app-library/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/app-library/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/app-library"],
+          "options": {
+            "jestConfig": "libs/app-library/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }
