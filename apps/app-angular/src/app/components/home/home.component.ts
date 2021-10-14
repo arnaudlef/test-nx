@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'home',
@@ -8,15 +8,33 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HomeComponent implements OnInit {
 
-    data: string = "back end response : ";
+    data = {
+        route1: "/api : ",
+        route2: "/api/test : ",
+    }
 
     constructor(private http: HttpClient) { }
 
     async ngOnInit() {
-        return this.http.get('http://localhost:4200/api').toPromise().then(
+        this.getAPI();
+        this.getTest();
+    }
+
+    getAPI() {
+        return this.http.get('/api').toPromise().then(
             (data) => {
                 console.log('data: ', data)
-                this.data += data['message'];
+                this.data.route1 += data['message'];
+            }),
+            (error: any) => {
+                console.log(error)
+            }
+    }
+
+    getTest() {
+        return this.http.get('/api/test').toPromise().then(
+            (data) => {
+                this.data.route2 += data['message'];
             }),
             (error: any) => {
                 console.log(error)
