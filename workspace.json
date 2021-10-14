@@ -64,7 +64,8 @@
               "browserTarget": "app-angular:build:production"
             },
             "development": {
-              "browserTarget": "app-angular:build:development"
+                "proxyConfig": "apps/app-angular/proxy.conf.json",
+                "browserTarget": "app-angular:build:development"
             }
           },
           "defaultConfiguration": "development"
