@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HomeComponent implements OnInit {
 
-    data: any;
+    data: string = "back end response : ";
 
     constructor(private http: HttpClient) { }
 
@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
         return this.http.get('http://localhost:4200/api').toPromise().then(
             (data) => {
                 console.log('data: ', data)
-                this.data = data;
+                this.data += data['message'];
             }),
             (error: any) => {
                 console.log(error)
