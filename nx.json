@@ -27,6 +27,16 @@
     ]
   },
   "projects": {
+    "app-angular": {
+      "tags": []
+    },
+    "app-angular-e2e": {
+      "tags": [],
+      "implicitDependencies": ["app-angular"]
+    },
+    "app-nest": {
+      "tags": []
+    },
     "test-angular": {
       "tags": []
     },
